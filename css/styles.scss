@@ -1,11 +1,6 @@
-@font-face {
-    font-family: SVN-Gilroy;
-    src: url(/font/SVN-Gilroy\ Regular.otf);
-}
-@font-face {
-    font-family: "Noto Sans JP";
-    src: url(/font/NotoSansJP-Regular-Alphabetic.ttf);
-}
+@import "./effect.scss";
+@import "./font.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +8,32 @@
     box-sizing: border-box;
     vertical-align: middle;
 }
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+@mixin wh($wight: 0, $height: 0) {
+    @if $wight != 0 {
+        width: $wight;
+    }
+    @if $height != 0 {
+        height: $height;
+    }
+}
+
+@mixin cutText() {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 body {
     scroll-behavior: smooth;
-    transition: all 0.5s linear;
 }
 .row {
     display: flex;
@@ -23,8 +41,7 @@ body {
 }
 .container {
     width: 100%;
-    padding-left: 102px;
-    padding-right: 101px;
+    padding: 0 101px 0 102px;
 }
 header {
     width: 100%;
@@ -44,48 +61,32 @@ header {
         width: 100%;
         background: rgba(255, 255, 255, 0.65);
         box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
-        padding-top: 30px;
-        padding-bottom: 31px;
+        padding: 30px 0 31px 0;
         z-index: 99;
         .container {
             .row {
                 .mobile {
                     display: none;
-                    .bar-mobile {
-                    }
-                    .logo-mobile {
-                        a {
-                            img {
-                            }
-                        }
-                    }
-                    .search-menu {
-                    }
                 }
-
                 justify-content: space-between;
                 align-items: center;
                 align-content: center;
                 .header-right {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include center;
+                    
                     .logo {
                         border: 0;
                         font-size: 100%;
                         margin-right: 33px;
                         text-decoration: none;
                         vertical-align: baseline;
-                        img {
-                        }
                     }
                     .form-search {
-                        width: 374px;
-
+                        @include wh(374px, 0);
                         form {
                             position: relative;
                             .news-search {
-                                width: 100%;
+                                @include wh(100%, 0);
                                 padding: 13.2px 35px 14.2px 20px;
                                 background: #ffffff;
                                 border: 1px solid #d4d4d4;
@@ -100,8 +101,7 @@ header {
                                 border: none;
                                 cursor: pointer;
                                 svg {
-                                    width: 19px;
-                                    height: 19px;
+                                    @include wh(19px, 19px);
                                     path {
                                         fill: #a7a7a7;
                                     }
@@ -111,62 +111,39 @@ header {
                     }
                 }
                 .header-left {
-                    display: flex;
-                    justify-content: center;
-                    align-content: center;
-                    align-items: center;
+                    @include center;
                     .logo-mobile {
                         display: none;
                     }
                     button {
                         background: #770303;
                         border-radius: 3px;
-                        width: 51px;
-                        height: 31px;
+                        @include wh(51px, 31px);
                         outline: none;
                         border: none;
-                        font-family: "Noto Sans JP";
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 15px;
-                        line-height: 22px;
+                        font: normal 500 15px/22px "Noto Sans JP";
                         color: #ffffff;
                         cursor: pointer;
                         margin-right: 27px;
                     }
                     a {
-                        font-family: "Noto Sans JP";
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 15px;
-                        line-height: 22px;
+                        font: normal 500 15px/22px "Noto Sans JP";
                         color: #212121;
                         text-decoration: none;
                     }
                     .login {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        align-content: center;
+                        @include center;
                         margin-left: 106px;
                         a {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            align-content: center;
+                            @include center;
                             text-decoration: none;
                             span {
-                                font-family: "Noto Sans JP";
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 15px;
-                                line-height: 22px;
+                                font: normal 500 15px/22px "Noto Sans JP";
                                 color: #212121;
                                 margin-right: 17px;
                             }
                             svg {
-                                width: 26.67px;
-                                height: 26.67px;
+                                @include wh(26.67px, 26.67px);
                                 path {
                                     fill: #212121;
                                 }
@@ -187,17 +164,11 @@ main {
     .wrap {
         .container {
             .title-category {
-                display: flex;
+                @include center();
                 justify-content: space-between;
-                align-items: center;
-                align-content: center;
                 margin-bottom: 38px;
                 .title {
-                    font-family: "Noto Sans JP";
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 50px;
-                    line-height: 72px;
+                    font: normal 700 50px/72px "Noto Sans JP";
                     color: #000000;
                 }
                 .category {
@@ -206,14 +177,10 @@ main {
                         background: #ffffff;
                         border: 1px solid #dedede;
                         border-radius: 4px;
-                        width: 144px;
+                        @include wh(144px, 0);
                         padding: 7px 20.42px 10px 15px;
                         appearance: none;
-                        font-family: "Noto Sans JP";
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 15px;
-                        line-height: 22px;
+                        font: normal 500 15px/22px "Noto Sans JP";
                         color: #212121;
                     }
                     .arrow {
@@ -221,8 +188,7 @@ main {
                         top: 10px;
                         right: 16.33px;
                         img {
-                            width: 7.67px;
-                            height: 7.64px;
+                            @include wh(7.67px, 7.64px);
                         }
                     }
                 }
@@ -232,7 +198,7 @@ main {
                 .row {
                     gap: 70px 30px;
                     .card {
-                        width: calc(100% / 3 - 20px);
+                        @include wh(calc(100% / 3 - 20px), 0);
                         border-radius: 8px;
                         overflow: hidden;
                         background: #ffffff;
@@ -240,63 +206,29 @@ main {
                         a {
                             text-decoration: none;
                             .card-img {
-                                width: 100%;
-                                height: auto;
+                                @include wh(100%, auto);
                                 overflow: hidden;
-                                transition: all 1.5s;
                                 margin-bottom: 25px;
                                 transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
                                 position: relative;
-                                &::before {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    z-index: 2;
-                                    display: block;
-                                    content: "";
-                                    width: 0;
-                                    height: 0;
-                                    background: rgba(255, 255, 255, 0.2);
-                                    border-radius: 100%;
-                                    -webkit-transform: translate(-50%, -50%);
-                                    transform: translate(-50%, -50%);
-                                    opacity: 0;
-                                }
-                                &:hover {
-                                    &::before {
-                                        -webkit-animation: circle 0.75s;
-                                        animation: circle 0.75s;
-                                    }
-                                    img {
-                                        transform: scale(1.2);
-                                    }
-                                }
 
+                                @include effectImg();
                                 img {
-                                    width: 100%;
+                                    @include wh(100%, 0);
                                     transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
                                 }
                             }
                             .card-content {
                                 padding: 0 13px 31px 20px;
                                 .card-flex {
-                                    display: flex;
-                                    align-items: center;
-                                    align-content: center;
+                                    @include center;
                                     justify-content: start;
                                     margin-bottom: 15px;
                                     flex-wrap: wrap;
                                     .card-user {
-                                        font-family: "SVN-Gilroy";
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 18px;
-                                        line-height: 30px;
+                                        font: normal 400 18px/30px "SVN-Gilroy";
                                         color: #211e3b;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        align-content: center;
+                                        @include center;
                                         margin-right: 24px;
                                         margin-left: 7px;
                                         svg {
@@ -307,16 +239,9 @@ main {
                                         }
                                     }
                                     .card-time {
-                                        font-family: "SVN-Gilroy";
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 18px;
-                                        line-height: 30px;
+                                        font: normal 400 18px/30px "SVN-Gilroy";
                                         color: #211e3b;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        align-content: center;
+                                        @include center;
                                         svg {
                                             margin-right: 10px;
                                             path {
@@ -327,44 +252,23 @@ main {
                                 }
                             }
                             .card-title {
-                                font-family: "SVN-Gilroy";
-                                font-style: normal;
-                                font-weight: 700;
-                                font-size: 20px;
-                                line-height: 28px;
+                                font: normal 700 20px/28px "SVN-Gilroy";
                                 color: #211e3b;
                                 margin-bottom: 10px;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                -webkit-box-orient: vertical;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
+                                @include cutText();
                             }
                             .card-text {
-                                font-family: "SVN-Gilroy";
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 18px;
-                                line-height: 25px;
+                                font: normal 400 18px/25px "SVN-Gilroy";
                                 color: #211e3b;
                                 margin-bottom: 19px;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                -webkit-box-orient: vertical;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
+                                @include cutText();
                             }
                             .card-button {
-                                width: 137px;
-                                height: 40px;
+                                @include wh(137px, 40px);
                                 background: #ffffff;
                                 border: 1px solid #e4e4e4;
                                 border-radius: 4px;
-                                font-family: "SVN-Gilroy";
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 20px;
+                                font: normal 400 14px/20px "SVN-Gilroy";
                                 color: #c40000;
                                 cursor: pointer;
                                 &:hover {
@@ -382,28 +286,17 @@ main {
                 }
             }
             .pagination {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
+                @include center;
                 margin-bottom: 96px;
                 ul {
-                    display: flex;
-                    justify-content: center;
+                    @include center;
                     list-style: none;
-                    align-items: center;
-                    align-content: center;
                     li {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        align-content: center;
+                        @include center;
                         margin-right: 10px;
-                        width: 32px;
-                        height: 32px;
+                        @include wh(32px, 32px);
                         &:hover {
-                            width: 32px;
-                            height: 32px;
+                            @include wh(32px, 32px);
                             background: #ffe4e4;
                             border-radius: 100%;
                             a {
@@ -414,35 +307,26 @@ main {
                             margin-right: 0;
                         }
                         &.first {
-                            width: 40px;
-                            height: 40px;
+                            @include wh(40px, 40px);
                             border-radius: 100%;
                             background: #c40000;
                             a {
                                 color: #ffffff;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                align-content: center;
+                                @include center;
                             }
                         }
                         &.end {
-                            width: 40px;
-                            height: 40px;
+                            @include wh(40px, 40px);
                             border-radius: 100%;
                             background: #e5e5e5;
                             transform: rotate(180deg);
                             a {
                                 color: #ffffff;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                align-content: center;
+                                @include center;
                             }
                         }
                         &.active {
-                            width: 32px;
-                            height: 32px;
+                            @include wh(32px, 32px);
                             background: #ffe4e4;
                             border-radius: 100%;
                             a {
@@ -451,19 +335,10 @@ main {
                         }
                         a {
                             text-decoration: none;
-                            font-family: "SVN-Gilroy";
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 20px;
-                            line-height: 28px;
+                            font: normal 700 20px/28px "SVN-Gilroy";
                             color: #211e3b;
                             text-align: center;
-                            width: 100%;
-                            height: 100%;
-                            svg {
-                                path {
-                                }
-                            }
+                            @include wh(100%, 100%);
                         }
                     }
                 }
@@ -472,549 +347,11 @@ main {
     }
 }
 footer {
-    font-family: "Noto Sans JP";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 22px;
+    @include center;
+    font: normal normal 500 15px/22px "Noto Sans JP";
     color: #ffffff;
-    height: 94px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    @include wh(0, 94px);
     background: #000000;
 }
-@media screen and (max-width: 1200px) {
-    header {
-        .background-image {
-            img {
-                width: 100%;
-            }
-        }
-        .nav {
-            .container {
-                .row {
-                    .mobile {
-                        .bar-mobile {
-                        }
-                        .logo-mobile {
-                            a {
-                                img {
-                                }
-                            }
-                        }
-                        .search-menu {
-                        }
-                    }
 
-                    .header-right {
-                        .logo {
-                            img {
-                            }
-                        }
-                        .form-search {
-                            width: 250px;
-
-                            form {
-                                .news-search {
-                                }
-                                button {
-                                    svg {
-                                        path {
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .header-left {
-                        .logo-mobile {
-                        }
-                        button {
-                        }
-                        a {
-                        }
-                        .login {
-                            a {
-                                span {
-                                }
-                                svg {
-                                    path {
-                                    }
-                                }
-                            }
-                        }
-                        .menu-close {
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 1000px) {
-    header {
-        .background-image {
-            img {
-                width: 100%;
-            }
-        }
-        .nav {
-            .container {
-                .row {
-                    .mobile {
-                        .bar-mobile {
-                        }
-                        .logo-mobile {
-                            a {
-                                img {
-                                }
-                            }
-                        }
-                        .search-menu {
-                        }
-                    }
-
-                    .header-right {
-                        justify-content: space-between;
-                        width: 100%;
-                        margin-bottom: 15px;
-                        .logo {
-                            img {
-                            }
-                        }
-                        .form-search {
-                            width: 250px;
-
-                            form {
-                                .news-search {
-                                }
-                                button {
-                                    svg {
-                                        path {
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .header-left {
-                        width: 100%;
-                        justify-content: space-between;
-                        .logo-mobile {
-                        }
-                        button {
-                        }
-                        a {
-                        }
-                        .login {
-                            a {
-                                span {
-                                }
-                                svg {
-                                    path {
-                                    }
-                                }
-                            }
-                        }
-                        .menu-close {
-                        }
-                    }
-                }
-            }
-        }
-    }
-    main {
-        .wrap {
-            .container {
-                .title-category {
-                    .title {
-                    }
-                    .category {
-                        select {
-                        }
-                        .arrow {
-                            img {
-                            }
-                        }
-                    }
-                }
-                .body {
-                    .row {
-                        .card {
-                            width: calc(100% / 2 - 20px);
-
-                            a {
-                                .card-img {
-                                    &::before {
-                                    }
-                                    &:hover {
-                                        &::before {
-                                        }
-                                        img {
-                                        }
-                                    }
-
-                                    img {
-                                    }
-                                }
-                                .card-content {
-                                    .card-flex {
-                                        .card-user {
-                                            margin-left: 0px;
-                                            svg {
-                                                path {
-                                                }
-                                            }
-                                        }
-                                        .card-time {
-                                            svg {
-                                                path {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                .card-title {
-                                }
-                                .card-text {
-                                }
-                                .card-button {
-                                    &:hover {
-                                    }
-
-                                    img {
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .pagination {
-                    ul {
-                        li {
-                            &:hover {
-                                a {
-                                }
-                            }
-                            &:last-child {
-                            }
-                            &.first {
-                                a {
-                                }
-                            }
-                            &.end {
-                                a {
-                                }
-                            }
-                            &.active {
-                                a {
-                                }
-                            }
-                            a {
-                                svg {
-                                    path {
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 576px) {
-    .container {
-        width: 100%;
-        padding-left: 64px;
-        padding-right: 68px;
-    }
-    header {
-        .background-image {
-            width: 100%;
-            height: 454.49px;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-        .nav {
-            background: #ffffff;
-            box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
-
-            padding: 0;
-            .container {
-                padding-left: 22px;
-                padding-right: 23px;
-                .row {
-                    .mobile {
-                        height: 69px;
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        align-content: center;
-                        .bar-mobile {
-                            cursor: pointer;
-                        }
-                        .logo-mobile {
-                            width: 137px;
-                            height: 45px;
-                            a {
-                                width: 100%;
-                                height: 100%;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                        }
-                        .search-mobile {
-                            cursor: pointer;
-                        }
-                    }
-
-                    .header-right {
-                        display: none;
-                        position: fixed;
-                        top: 70px;
-                        right: 10px;
-                        &.active {
-                            display: flex;
-                        }
-                        .logo {
-                            display: none;
-                        }
-                        .form-search {
-                            width: 300px;
-                        }
-                    }
-                    .header-left {
-                        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-                        position: fixed;
-                        flex-direction: column;
-                        justify-content: start;
-                        text-align: start;
-                        align-items: start;
-                        width: 250px;
-                        z-index: 1000;
-                        top: -300px;
-                        left: 0;
-                        background: #ffffff;
-                        height: 100vh;
-                        padding: 15px;
-                        display: none;
-                        &.active {
-                            display: flex;
-
-                            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-                        }
-                        .logo-mobile {
-                            margin-top: 15px;
-                            margin-bottom: 30px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 100%;
-                        }
-
-                        button {
-                            margin-bottom: 15px;
-                            margin-right: 0;
-                        }
-                        a {
-                            margin-bottom: 15px;
-                        }
-                        .login {
-                            margin-bottom: 15px;
-                            margin-left: 0;
-                            a {
-                                direction: rtl;
-                                span {
-                                    margin-right: 0;
-                                    margin-left: 10px;
-                                }
-                                svg {
-                                    display: block;
-                                    width: 20px;
-                                    height: 20px;
-
-                                    path {
-                                    }
-                                }
-                            }
-                        }
-                        .menu-close {
-                            display: block;
-                            position: fixed;
-                            left: 220px;
-                            height: 23px;
-                            width: 20px;
-                            cursor: pointer;
-                            &:hover {
-                                svg {
-                                    path {
-                                        fill: red;
-                                    }
-                                }
-                            }
-                            svg {
-                                width: 100%;
-                                height: 100%;
-                                cursor: pointer;
-                                path {
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    main {
-        margin-top: 69.51px;
-        .wrap {
-            .container {
-                .title-category {
-                    margin-bottom: 39px;
-                    .title {
-                        font-size: 30px;
-                        line-height: 43px;
-                    }
-                    .category {
-                        position: relative;
-                        select {
-                        }
-                        .arrow {
-                            position: absolute;
-                            top: 10px;
-                            right: 16.33px;
-                            img {
-                                width: 7.67px;
-                                height: 7.64px;
-                            }
-                        }
-                    }
-                }
-                .body {
-                    margin-bottom: 67px;
-                    .row {
-                        gap: 70px 0;
-                        .card {
-                            width: 100%;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            background: #ffffff;
-                            border: 1px solid #cccccc;
-                            a {
-                                text-decoration: none;
-                                .card-img {
-                                    img {
-                                    }
-                                }
-                                .card-content {
-                                    .card-flex {
-                                        .card-user {
-                                            margin-right: 21px;
-                                            margin-left: 4px;
-                                            svg {
-                                                margin-right: 10px;
-                                                path {
-                                                    fill: #858383;
-                                                }
-                                            }
-                                        }
-                                        .card-time {
-                                            svg {
-                                                margin-right: 9.5px;
-                                                path {
-                                                    fill: #858383;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                .card-title {
-                                    -webkit-line-clamp: 3;
-                                }
-                                .card-text {
-                                    -webkit-line-clamp: 3;
-                                }
-                                .card-button {
-                                    img {
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .pagination {
-                    margin-bottom: 53px;
-                    ul {
-                        li {
-                            &:last-child {
-                            }
-                            &.first {
-                                a {
-                                }
-                            }
-                            &.end {
-                                a {
-                                }
-                            }
-                            &.active {
-                                a {
-                                }
-                            }
-                            a {
-                                svg {
-                                    path {
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    footer {
-    }
-}
-@media screen and (max-width: 400px) {
-    .container {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-@-webkit-keyframes circle {
-    0% {
-        opacity: 1;
-    }
-    40% {
-        opacity: 1;
-    }
-    100% {
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-    }
-}
-@keyframes circle {
-    0% {
-        opacity: 1;
-    }
-    40% {
-        opacity: 1;
-    }
-    100% {
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-    }
-}
+@import "./responsive.scss";

@@ -1,0 +1,279 @@
+@media screen and (max-width: 1200px) {
+    header {
+        .background-image {
+            img {
+                @include wh(100%, 0);
+            }
+        }
+        .nav {
+            .container {
+                .row {
+                    .header-right {
+                        .form-search {
+                            @include wh(250px, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    header {
+        .background-image {
+            img {
+                @include wh(100%, 0);
+            }
+        }
+        .nav {
+            .container {
+                .row {
+                    .header-right {
+                        justify-content: space-between;
+                        @include wh(100%, 0);
+                        margin-bottom: 15px;
+                        .form-search {
+                            @include wh(250px, 0);
+                        }
+                    }
+                    .header-left {
+                        @include wh(100%);
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        .wrap {
+            .container {
+                .body {
+                    .row {
+                        .card {
+                            @include wh(calc(100% / 2 - 20px), 0);
+                            a {
+                                .card-content {
+                                    .card-flex {
+                                        .card-user {
+                                            margin-left: 0px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .container {
+        @include wh(100%, 0);
+        padding: 0 68px 0 64px;
+    }
+    header {
+        .background-image {
+            @include wh(100%, 454.49px);
+            img {
+                @include wh(100%, 100%);
+                object-fit: cover;
+            }
+        }
+        .nav {
+            background: #ffffff;
+            box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
+            padding: 0;
+            .container {
+                padding: 0 23px 0 22px;
+                .row {
+                    .mobile {
+                        @include wh(100%, 69px);
+                        @include center();
+                        justify-content: space-between;
+                        .bar-mobile {
+                            cursor: pointer;
+                        }
+                        .logo-mobile {
+                            @include wh(137px, 45px);
+                            a {
+                                @include wh(100%, 100%);
+                                img {
+                                    @include wh(100%, 100%);
+                                }
+                            }
+                        }
+                        .search-mobile {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .header-right {
+                        display: none;
+                        position: fixed;
+                        top: 70px;
+                        right: 10px;
+                        &.active {
+                            display: flex;
+                            width: auto;
+                        }
+                        .logo {
+                            display: none;
+                        }
+                        .form-search {
+                            @include wh(300px, 0);
+                        }
+                    }
+                    .header-left {
+                        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                        position: fixed;
+                        flex-direction: column;
+                        justify-content: start;
+                        text-align: start;
+                        align-items: start;
+                        @include wh(250px, 100vh);
+                        z-index: 1000;
+                        top: -300px;
+                        left: 0;
+                        background: #ffffff;
+                        padding: 15px;
+                        display: none;
+                        &.active {
+                            display: flex;
+                            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+                        }
+                        .logo-mobile {
+                            margin: 15px 0 30px 0 !important;
+                            @include center();
+                            @include wh(100%, 0);
+                        }
+
+                        button {
+                            margin: 0 0 15px 0 !important;
+                        }
+                        a {
+                            margin-bottom: 15px;
+                        }
+                        .login {
+                            margin-bottom: 15px;
+                            margin-left: 0;
+                            a {
+                                direction: rtl;
+                                span {
+                                    margin-right: 0;
+                                    margin-left: 10px;
+                                }
+                                svg {
+                                    display: block;
+                                    @include wh(20px, 20px);
+                                }
+                            }
+                        }
+                        .menu-close {
+                            display: block;
+                            position: fixed;
+                            left: 220px;
+                            @include wh(23px, 20px);
+                            cursor: pointer;
+                            &:hover {
+                                svg {
+                                    path {
+                                        fill: red;
+                                    }
+                                }
+                            }
+                            svg {
+                                @include wh(100%, 100%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        margin-top: 69.51px;
+        .wrap {
+            .container {
+                .title-category {
+                    margin-bottom: 39px;
+                    .title {
+                        font-size: 30px;
+                        line-height: 43px;
+                    }
+                    .category {
+                        position: relative;
+                        select {
+                        }
+                        .arrow {
+                            position: absolute;
+                            top: 10px;
+                            right: 16.33px;
+                            img {
+                                width: 7.67px;
+                                height: 7.64px;
+                            }
+                        }
+                    }
+                }
+                .body {
+                    margin-bottom: 67px;
+                    .row {
+                        gap: 70px 0;
+                        .card {
+                            width: 100%;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            background: #ffffff;
+                            border: 1px solid #cccccc;
+                            a {
+                                text-decoration: none;
+                                .card-content {
+                                    .card-flex {
+                                        .card-user {
+                                            margin: 0 21px 0 0;
+                                            svg {
+                                                margin-right: 10px;
+                                                path {
+                                                    fill: #858383;
+                                                }
+                                            }
+                                        }
+                                        .card-time {
+                                            svg {
+                                                margin-right: 9.5px;
+                                                path {
+                                                    fill: #858383;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .card-title {
+                                    -webkit-line-clamp: 3;
+                                }
+                                .card-text {
+                                    -webkit-line-clamp: 3;
+                                }
+                                .card-button {
+                                    img {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pagination {
+                    margin-bottom: 53px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding: 0 30px 0 30px;
+    }
+}

@@ -1,3 +1,29 @@
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
 @font-face {
   font-family: SVN-Gilroy;
   src: url(/font/SVN-Gilroy\ Regular.otf);
@@ -16,7 +42,6 @@
 
 body {
   scroll-behavior: smooth;
-  transition: all 0.5s linear;
 }
 
 .row {
@@ -26,8 +51,7 @@ body {
 
 .container {
   width: 100%;
-  padding-left: 102px;
-  padding-right: 101px;
+  padding: 0 101px 0 102px;
 }
 
 header {
@@ -49,8 +73,7 @@ header .nav {
   width: 100%;
   background: rgba(255, 255, 255, 0.65);
   box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
-  padding-top: 30px;
-  padding-bottom: 31px;
+  padding: 30px 0 31px 0;
   z-index: 99;
 }
 header .nav .container .row {
@@ -65,6 +88,7 @@ header .nav .container .row .header-right {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 header .nav .container .row .header-right .logo {
   border: 0;
@@ -105,8 +129,8 @@ header .nav .container .row .header-right .form-search form button svg path {
 header .nav .container .row .header-left {
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
+  align-content: center;
 }
 header .nav .container .row .header-left .logo-mobile {
   display: none;
@@ -118,21 +142,13 @@ header .nav .container .row .header-left button {
   height: 31px;
   outline: none;
   border: none;
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
+  font: normal 500 15px/22px "Noto Sans JP";
   color: #ffffff;
   cursor: pointer;
   margin-right: 27px;
 }
 header .nav .container .row .header-left a {
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
+  font: normal 500 15px/22px "Noto Sans JP";
   color: #212121;
   text-decoration: none;
 }
@@ -151,11 +167,7 @@ header .nav .container .row .header-left .login a {
   text-decoration: none;
 }
 header .nav .container .row .header-left .login a span {
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
+  font: normal 500 15px/22px "Noto Sans JP";
   color: #212121;
   margin-right: 17px;
 }
@@ -176,17 +188,14 @@ main {
 }
 main .wrap .container .title-category {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   align-content: center;
+  justify-content: space-between;
   margin-bottom: 38px;
 }
 main .wrap .container .title-category .title {
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 72px;
+  font: normal 700 50px/72px "Noto Sans JP";
   color: #000000;
 }
 main .wrap .container .title-category .category {
@@ -199,11 +208,7 @@ main .wrap .container .title-category .category select {
   width: 144px;
   padding: 7px 20.42px 10px 15px;
   appearance: none;
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
+  font: normal 500 15px/22px "Noto Sans JP";
   color: #212121;
 }
 main .wrap .container .title-category .category .arrow {
@@ -235,7 +240,6 @@ main .wrap .container .body .row .card a .card-img {
   width: 100%;
   height: auto;
   overflow: hidden;
-  transition: all 1.5s;
   margin-bottom: 25px;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
@@ -271,6 +275,7 @@ main .wrap .container .body .row .card a .card-content {
 }
 main .wrap .container .body .row .card a .card-content .card-flex {
   display: flex;
+  justify-content: center;
   align-items: center;
   align-content: center;
   justify-content: start;
@@ -278,11 +283,7 @@ main .wrap .container .body .row .card a .card-content .card-flex {
   flex-wrap: wrap;
 }
 main .wrap .container .body .row .card a .card-content .card-flex .card-user {
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
+  font: normal 400 18px/30px "SVN-Gilroy";
   color: #211e3b;
   display: flex;
   justify-content: center;
@@ -298,11 +299,7 @@ main .wrap .container .body .row .card a .card-content .card-flex .card-user svg
   fill: #858383;
 }
 main .wrap .container .body .row .card a .card-content .card-flex .card-time {
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
+  font: normal 400 18px/30px "SVN-Gilroy";
   color: #211e3b;
   display: flex;
   justify-content: center;
@@ -316,11 +313,7 @@ main .wrap .container .body .row .card a .card-content .card-flex .card-time svg
   fill: #858383;
 }
 main .wrap .container .body .row .card a .card-title {
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
+  font: normal 700 20px/28px "SVN-Gilroy";
   color: #211e3b;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -330,11 +323,7 @@ main .wrap .container .body .row .card a .card-title {
   text-overflow: ellipsis;
 }
 main .wrap .container .body .row .card a .card-text {
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
+  font: normal 400 18px/25px "SVN-Gilroy";
   color: #211e3b;
   margin-bottom: 19px;
   display: -webkit-box;
@@ -349,11 +338,7 @@ main .wrap .container .body .row .card a .card-button {
   background: #ffffff;
   border: 1px solid #e4e4e4;
   border-radius: 4px;
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font: normal 400 14px/20px "SVN-Gilroy";
   color: #c40000;
   cursor: pointer;
 }
@@ -375,9 +360,9 @@ main .wrap .container .pagination {
 main .wrap .container .pagination ul {
   display: flex;
   justify-content: center;
-  list-style: none;
   align-items: center;
   align-content: center;
+  list-style: none;
 }
 main .wrap .container .pagination ul li {
   display: flex;
@@ -438,28 +423,21 @@ main .wrap .container .pagination ul li.active a {
 }
 main .wrap .container .pagination ul li a {
   text-decoration: none;
-  font-family: "SVN-Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
+  font: normal 700 20px/28px "SVN-Gilroy";
   color: #211e3b;
   text-align: center;
   width: 100%;
   height: 100%;
 }
+
 footer {
-  font-family: "Noto Sans JP";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
-  color: #ffffff;
-  height: 94px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  font: normal normal 500 15px/22px "Noto Sans JP";
+  color: #ffffff;
+  height: 94px;
   background: #000000;
 }
 
@@ -497,8 +475,7 @@ footer {
 @media screen and (max-width: 576px) {
   .container {
     width: 100%;
-    padding-left: 64px;
-    padding-right: 68px;
+    padding: 0 68px 0 64px;
   }
   header .background-image {
     width: 100%;
@@ -515,16 +492,16 @@ footer {
     padding: 0;
   }
   header .nav .container {
-    padding-left: 22px;
-    padding-right: 23px;
+    padding: 0 23px 0 22px;
   }
   header .nav .container .row .mobile {
-    height: 69px;
     width: 100%;
+    height: 69px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     align-content: center;
+    justify-content: space-between;
   }
   header .nav .container .row .mobile .bar-mobile {
     cursor: pointer;
@@ -552,6 +529,7 @@ footer {
   }
   header .nav .container .row .header-right.active {
     display: flex;
+    width: auto;
   }
   header .nav .container .row .header-right .logo {
     display: none;
@@ -567,11 +545,11 @@ footer {
     text-align: start;
     align-items: start;
     width: 250px;
+    height: 100vh;
     z-index: 1000;
     top: -300px;
     left: 0;
     background: #ffffff;
-    height: 100vh;
     padding: 15px;
     display: none;
   }
@@ -580,16 +558,15 @@ footer {
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
   header .nav .container .row .header-left .logo-mobile {
-    margin-top: 15px;
-    margin-bottom: 30px;
+    margin: 15px 0 30px 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     width: 100%;
   }
   header .nav .container .row .header-left button {
-    margin-bottom: 15px;
-    margin-right: 0;
+    margin: 0 0 15px 0 !important;
   }
   header .nav .container .row .header-left a {
     margin-bottom: 15px;
@@ -614,8 +591,8 @@ footer {
     display: block;
     position: fixed;
     left: 220px;
-    height: 23px;
-    width: 20px;
+    width: 23px;
+    height: 20px;
     cursor: pointer;
   }
   header .nav .container .row .header-left .menu-close:hover svg path {
@@ -665,8 +642,7 @@ footer {
     text-decoration: none;
   }
   main .wrap .container .body .row .card a .card-content .card-flex .card-user {
-    margin-right: 21px;
-    margin-left: 4px;
+    margin: 0 21px 0 0;
   }
   main .wrap .container .body .row .card a .card-content .card-flex .card-user svg {
     margin-right: 10px;
@@ -693,34 +669,7 @@ footer {
 @media screen and (max-width: 400px) {
   .container {
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@-webkit-keyframes circle {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    width: 200%;
-    height: 200%;
-    opacity: 0;
-  }
-}
-@keyframes circle {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    width: 200%;
-    height: 200%;
-    opacity: 0;
+    padding: 0 30px 0 30px;
   }
 }
 
