@@ -27,10 +27,12 @@
 @font-face {
   font-family: SVN-Gilroy;
   src: url(/font/SVN-Gilroy\ Regular.otf);
+  font-display: block;
 }
 @font-face {
   font-family: "Noto Sans JP";
   src: url(/font/NotoSansJP-Regular-Alphabetic.ttf);
+  font-display: block;
 }
 * {
   margin: 0;
@@ -91,8 +93,6 @@ header .nav .container .row .header-right {
   align-content: center;
 }
 header .nav .container .row .header-right .logo {
-  border: 0;
-  font-size: 100%;
   margin-right: 33px;
   text-decoration: none;
   vertical-align: baseline;
@@ -572,15 +572,13 @@ footer {
     margin-bottom: 15px;
   }
   header .nav .container .row .header-left .login {
-    margin-bottom: 15px;
-    margin-left: 0;
+    margin: 0 0 15px 0 !important;
   }
   header .nav .container .row .header-left .login a {
     direction: rtl;
   }
   header .nav .container .row .header-left .login a span {
-    margin-right: 0;
-    margin-left: 10px;
+    margin: 0 0 0 10px !important;
   }
   header .nav .container .row .header-left .login a svg {
     display: block;
@@ -623,7 +621,7 @@ footer {
   }
   main .wrap .container .title-category .category .arrow img {
     width: 7.67px;
-    height: 7.64px;
+    height: 7.67px;
   }
   main .wrap .container .body {
     margin-bottom: 67px;

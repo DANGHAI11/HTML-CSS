@@ -1,5 +1,6 @@
 @import "./effect.scss";
 @import "./font.scss";
+@import "./mixin.scss";
 
 * {
     margin: 0;
@@ -7,29 +8,6 @@
     outline: none;
     box-sizing: border-box;
     vertical-align: middle;
-}
-
-@mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-@mixin wh($wight: 0, $height: 0) {
-    @if $wight != 0 {
-        width: $wight;
-    }
-    @if $height != 0 {
-        height: $height;
-    }
-}
-
-@mixin cutText() {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 body {
@@ -73,10 +51,7 @@ header {
                 align-content: center;
                 .header-right {
                     @include center;
-                    
                     .logo {
-                        border: 0;
-                        font-size: 100%;
                         margin-right: 33px;
                         text-decoration: none;
                         vertical-align: baseline;

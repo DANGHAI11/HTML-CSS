@@ -155,13 +155,11 @@
                             margin-bottom: 15px;
                         }
                         .login {
-                            margin-bottom: 15px;
-                            margin-left: 0;
+                            margin: 0 0 15px 0 !important;
                             a {
                                 direction: rtl;
                                 span {
-                                    margin-right: 0;
-                                    margin-left: 10px;
+                                    margin: 0 0 0 10px !important;
                                 }
                                 svg {
                                     display: block;
@@ -204,15 +202,12 @@
                     }
                     .category {
                         position: relative;
-                        select {
-                        }
                         .arrow {
                             position: absolute;
                             top: 10px;
                             right: 16.33px;
                             img {
-                                width: 7.67px;
-                                height: 7.64px;
+                                @include wh(7.67px, 7.67px);
                             }
                         }
                     }
@@ -255,10 +250,6 @@
                                 }
                                 .card-text {
                                     -webkit-line-clamp: 3;
-                                }
-                                .card-button {
-                                    img {
-                                    }
                                 }
                             }
                         }

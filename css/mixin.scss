@@ -1,0 +1,23 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin wh($wight: 0, $height: 0) {
+    @if $wight != 0 {
+        width: $wight;
+    }
+    @if $height != 0 {
+        height: $height;
+    }
+}
+
+@mixin cutText() {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
