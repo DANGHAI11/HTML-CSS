@@ -165,6 +165,9 @@ header .nav .container .row .header_left .login a svg {
 header .nav .container .row .header_left .login a svg path {
   fill: #212121;
 }
+header .nav .container .row .header_left .menu_close {
+  display: none;
+}
 
 main {
   background: #ffffff;
@@ -541,6 +544,7 @@ footer {
     height: 20px;
   }
   header .nav .container .row .header_left .menu_close {
+    display: block;
     position: fixed;
     left: 220px;
     height: 23px;

@@ -13,7 +13,7 @@
     box-sizing: border-box;
     vertical-align: middle;
 }
-body{
+body {
     scroll-behavior: smooth;
     transition: all 0.5s linear;
 }
@@ -171,6 +171,9 @@ header {
                                 }
                             }
                         }
+                    }
+                    .menu_close {
+                        display: none;
                     }
                 }
             }
@@ -528,7 +531,7 @@ footer {
                         display: none;
                         &.active {
                             display: flex;
-                          
+
                             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
                         }
                         .logo_mobile {
@@ -567,6 +570,7 @@ footer {
                             }
                         }
                         .menu_close {
+                            display: block;
                             position: fixed;
                             left: 220px;
                             height: 23px;
