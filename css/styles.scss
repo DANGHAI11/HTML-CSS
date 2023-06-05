@@ -51,22 +51,22 @@ header {
             .row {
                 .mobile {
                     display: none;
-                    .bar_mobile {
+                    .bar-mobile {
                     }
-                    .logo_mobile {
+                    .logo-mobile {
                         a {
                             img {
                             }
                         }
                     }
-                    .search_menu {
+                    .search-menu {
                     }
                 }
 
                 justify-content: space-between;
                 align-items: center;
                 align-content: center;
-                .header_right {
+                .header-right {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -79,12 +79,12 @@ header {
                         img {
                         }
                     }
-                    .form_search {
+                    .form-search {
                         width: 374px;
 
                         form {
                             position: relative;
-                            .news_search {
+                            .news-search {
                                 width: 100%;
                                 padding: 13.2px 35px 14.2px 20px;
                                 background: #ffffff;
@@ -98,6 +98,7 @@ header {
                                 background: transparent;
                                 outline: none;
                                 border: none;
+                                cursor: pointer;
                                 svg {
                                     width: 19px;
                                     height: 19px;
@@ -109,12 +110,12 @@ header {
                         }
                     }
                 }
-                .header_left {
+                .header-left {
                     display: flex;
                     justify-content: center;
                     align-content: center;
                     align-items: center;
-                    .logo_mobile {
+                    .logo-mobile {
                         display: none;
                     }
                     button {
@@ -172,7 +173,7 @@ header {
                             }
                         }
                     }
-                    .menu_close {
+                    .menu-close {
                         display: none;
                     }
                 }
@@ -185,7 +186,7 @@ main {
     margin-top: 86.58px;
     .wrap {
         .container {
-            .title_category {
+            .title-category {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -238,32 +239,54 @@ main {
                         border: 1px solid #cccccc;
                         a {
                             text-decoration: none;
-                            .card_img {
+                            .card-img {
                                 width: 100%;
                                 height: auto;
                                 overflow: hidden;
                                 transition: all 1.5s;
                                 margin-bottom: 25px;
+                                transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                position: relative;
+                                &::before {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    z-index: 2;
+                                    display: block;
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    background: rgba(255, 255, 255, 0.2);
+                                    border-radius: 100%;
+                                    -webkit-transform: translate(-50%, -50%);
+                                    transform: translate(-50%, -50%);
+                                    opacity: 0;
+                                }
                                 &:hover {
+                                    &::before {
+                                        -webkit-animation: circle 0.75s;
+                                        animation: circle 0.75s;
+                                    }
                                     img {
                                         transform: scale(1.2);
                                     }
                                 }
+
                                 img {
                                     width: 100%;
                                     transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
                                 }
                             }
-                            .card_content {
+                            .card-content {
                                 padding: 0 13px 31px 20px;
-                                .card_flex {
+                                .card-flex {
                                     display: flex;
                                     align-items: center;
                                     align-content: center;
                                     justify-content: start;
                                     margin-bottom: 15px;
                                     flex-wrap: wrap;
-                                    .card_user {
+                                    .card-user {
                                         font-family: "SVN-Gilroy";
                                         font-style: normal;
                                         font-weight: 400;
@@ -283,7 +306,7 @@ main {
                                             }
                                         }
                                     }
-                                    .card_time {
+                                    .card-time {
                                         font-family: "SVN-Gilroy";
                                         font-style: normal;
                                         font-weight: 400;
@@ -303,7 +326,7 @@ main {
                                     }
                                 }
                             }
-                            .card_title {
+                            .card-title {
                                 font-family: "SVN-Gilroy";
                                 font-style: normal;
                                 font-weight: 700;
@@ -317,7 +340,7 @@ main {
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                             }
-                            .card_text {
+                            .card-text {
                                 font-family: "SVN-Gilroy";
                                 font-style: normal;
                                 font-weight: 400;
@@ -331,7 +354,7 @@ main {
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                             }
-                            .card_button {
+                            .card-button {
                                 width: 137px;
                                 height: 40px;
                                 background: #ffffff;
@@ -344,6 +367,12 @@ main {
                                 line-height: 20px;
                                 color: #c40000;
                                 cursor: pointer;
+                                &:hover {
+                                    transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+                                    box-shadow: inset 300px 0 0 0 #c40000;
+                                    color: #ffffff;
+                                }
+
                                 img {
                                     margin-left: 10px;
                                 }
@@ -372,6 +401,15 @@ main {
                         margin-right: 10px;
                         width: 32px;
                         height: 32px;
+                        &:hover {
+                            width: 32px;
+                            height: 32px;
+                            background: #ffe4e4;
+                            border-radius: 100%;
+                            a {
+                                color: #c40000;
+                            }
+                        }
                         &:last-child {
                             margin-right: 0;
                         }
@@ -447,6 +485,246 @@ footer {
     align-content: center;
     background: #000000;
 }
+@media screen and (max-width: 1200px) {
+    header {
+        .background-image {
+            img {
+                width: 100%;
+            }
+        }
+        .nav {
+            .container {
+                .row {
+                    .mobile {
+                        .bar-mobile {
+                        }
+                        .logo-mobile {
+                            a {
+                                img {
+                                }
+                            }
+                        }
+                        .search-menu {
+                        }
+                    }
+
+                    .header-right {
+                        .logo {
+                            img {
+                            }
+                        }
+                        .form-search {
+                            width: 250px;
+
+                            form {
+                                .news-search {
+                                }
+                                button {
+                                    svg {
+                                        path {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .header-left {
+                        .logo-mobile {
+                        }
+                        button {
+                        }
+                        a {
+                        }
+                        .login {
+                            a {
+                                span {
+                                }
+                                svg {
+                                    path {
+                                    }
+                                }
+                            }
+                        }
+                        .menu-close {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    header {
+        .background-image {
+            img {
+                width: 100%;
+            }
+        }
+        .nav {
+            .container {
+                .row {
+                    .mobile {
+                        .bar-mobile {
+                        }
+                        .logo-mobile {
+                            a {
+                                img {
+                                }
+                            }
+                        }
+                        .search-menu {
+                        }
+                    }
+
+                    .header-right {
+                        justify-content: space-between;
+                        width: 100%;
+                        margin-bottom: 15px;
+                        .logo {
+                            img {
+                            }
+                        }
+                        .form-search {
+                            width: 250px;
+
+                            form {
+                                .news-search {
+                                }
+                                button {
+                                    svg {
+                                        path {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .header-left {
+                        width: 100%;
+                        justify-content: space-between;
+                        .logo-mobile {
+                        }
+                        button {
+                        }
+                        a {
+                        }
+                        .login {
+                            a {
+                                span {
+                                }
+                                svg {
+                                    path {
+                                    }
+                                }
+                            }
+                        }
+                        .menu-close {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        .wrap {
+            .container {
+                .title-category {
+                    .title {
+                    }
+                    .category {
+                        select {
+                        }
+                        .arrow {
+                            img {
+                            }
+                        }
+                    }
+                }
+                .body {
+                    .row {
+                        .card {
+                            width: calc(100% / 2 - 20px);
+
+                            a {
+                                .card-img {
+                                    &::before {
+                                    }
+                                    &:hover {
+                                        &::before {
+                                        }
+                                        img {
+                                        }
+                                    }
+
+                                    img {
+                                    }
+                                }
+                                .card-content {
+                                    .card-flex {
+                                        .card-user {
+                                            margin-left: 0px;
+                                            svg {
+                                                path {
+                                                }
+                                            }
+                                        }
+                                        .card-time {
+                                            svg {
+                                                path {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .card-title {
+                                }
+                                .card-text {
+                                }
+                                .card-button {
+                                    &:hover {
+                                    }
+
+                                    img {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pagination {
+                    ul {
+                        li {
+                            &:hover {
+                                a {
+                                }
+                            }
+                            &:last-child {
+                            }
+                            &.first {
+                                a {
+                                }
+                            }
+                            &.end {
+                                a {
+                                }
+                            }
+                            &.active {
+                                a {
+                                }
+                            }
+                            a {
+                                svg {
+                                    path {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 576px) {
     .container {
         width: 100%;
@@ -479,10 +757,10 @@ footer {
                         justify-content: space-between;
                         align-items: center;
                         align-content: center;
-                        .bar_mobile {
+                        .bar-mobile {
                             cursor: pointer;
                         }
-                        .logo_mobile {
+                        .logo-mobile {
                             width: 137px;
                             height: 45px;
                             a {
@@ -494,12 +772,12 @@ footer {
                                 }
                             }
                         }
-                        .search_mobile {
+                        .search-mobile {
                             cursor: pointer;
                         }
                     }
 
-                    .header_right {
+                    .header-right {
                         display: none;
                         position: fixed;
                         top: 70px;
@@ -510,11 +788,11 @@ footer {
                         .logo {
                             display: none;
                         }
-                        .form_search {
+                        .form-search {
                             width: 300px;
                         }
                     }
-                    .header_left {
+                    .header-left {
                         transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
                         position: fixed;
                         flex-direction: column;
@@ -534,7 +812,7 @@ footer {
 
                             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
                         }
-                        .logo_mobile {
+                        .logo-mobile {
                             margin-top: 15px;
                             margin-bottom: 30px;
                             display: flex;
@@ -569,7 +847,7 @@ footer {
                                 }
                             }
                         }
-                        .menu_close {
+                        .menu-close {
                             display: block;
                             position: fixed;
                             left: 220px;
@@ -600,7 +878,7 @@ footer {
         margin-top: 69.51px;
         .wrap {
             .container {
-                .title_category {
+                .title-category {
                     margin-bottom: 39px;
                     .title {
                         font-size: 30px;
@@ -633,25 +911,13 @@ footer {
                             border: 1px solid #cccccc;
                             a {
                                 text-decoration: none;
-                                .card_img {
-                                    width: 100%;
-                                    height: auto;
-                                    overflow: hidden;
-                                    transition: all 1.5s;
-                                    margin-bottom: 25px;
-                                    &:hover {
-                                        img {
-                                            transform: scale(1.2);
-                                        }
-                                    }
+                                .card-img {
                                     img {
-                                        width: 100%;
-                                        transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
                                     }
                                 }
-                                .card_content {
-                                    .card_flex {
-                                        .card_user {
+                                .card-content {
+                                    .card-flex {
+                                        .card-user {
                                             margin-right: 21px;
                                             margin-left: 4px;
                                             svg {
@@ -661,7 +927,7 @@ footer {
                                                 }
                                             }
                                         }
-                                        .card_time {
+                                        .card-time {
                                             svg {
                                                 margin-right: 9.5px;
                                                 path {
@@ -671,13 +937,13 @@ footer {
                                         }
                                     }
                                 }
-                                .card_title {
+                                .card-title {
                                     -webkit-line-clamp: 3;
                                 }
-                                .card_text {
+                                .card-text {
                                     -webkit-line-clamp: 3;
                                 }
-                                .card_button {
+                                .card-button {
                                     img {
                                     }
                                 }
@@ -716,5 +982,39 @@ footer {
         }
     }
     footer {
+    }
+}
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@-webkit-keyframes circle {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+@keyframes circle {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
     }
 }
