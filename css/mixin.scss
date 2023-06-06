@@ -21,3 +21,30 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@mixin effectImg() {
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    &:hover {
+        &::before {
+            -webkit-animation: circle 0.75s;
+            animation: circle 0.75s;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
