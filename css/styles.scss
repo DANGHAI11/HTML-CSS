@@ -1,0 +1,344 @@
+@import "./effect.scss";
+@import "./font.scss";
+@import "./mixin.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container {
+    width: 100%;
+    padding: 0 101px 0 102px;
+}
+header {
+    width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    .background-image {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
+        padding: 30px 0 31px 0;
+        z-index: 99;
+        .container {
+            .row {
+                .mobile {
+                    display: none;
+                }
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+                .header-right {
+                    @include center;
+                    .logo {
+                        margin-right: 33px;
+                        text-decoration: none;
+                        vertical-align: baseline;
+                    }
+                    .form-search {
+                        @include wh(374px, 0);
+                        form {
+                            position: relative;
+                            .news-search {
+                                @include wh(100%, 0);
+                                padding: 13.2px 35px 14.2px 20px;
+                                background: #ffffff;
+                                border: 1px solid #d4d4d4;
+                                border-radius: 4px;
+                            }
+                            button {
+                                position: absolute;
+                                right: 13px;
+                                top: 14px;
+                                background: transparent;
+                                outline: none;
+                                border: none;
+                                cursor: pointer;
+                                svg {
+                                    @include wh(19px, 19px);
+                                    path {
+                                        fill: #a7a7a7;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .header-left {
+                    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    @include center;
+                    .logo-mobile {
+                        display: none;
+                    }
+                    button {
+                        background: #770303;
+                        border-radius: 3px;
+                        @include wh(51px, 31px);
+                        outline: none;
+                        border: none;
+                        font: normal 500 15px/22px "Noto Sans JP";
+                        color: #ffffff;
+                        cursor: pointer;
+                        margin-right: 27px;
+                    }
+                    a {
+                        font: normal 500 15px/22px "Noto Sans JP";
+                        color: #212121;
+                        text-decoration: none;
+                    }
+                    .login {
+                        @include center;
+                        margin-left: 106px;
+                        a {
+                            @include center;
+                            text-decoration: none;
+                            span {
+                                font: normal 500 15px/22px "Noto Sans JP";
+                                color: #212121;
+                                margin-right: 17px;
+                            }
+                            svg {
+                                @include wh(26.67px, 26.67px);
+                                path {
+                                    fill: #212121;
+                                }
+                            }
+                        }
+                    }
+                    .menu-close {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    background: #ffffff;
+    margin-top: 86.58px;
+    .wrap {
+        .container {
+            .title-category {
+                @include center();
+                justify-content: space-between;
+                margin-bottom: 38px;
+                .title {
+                    font: normal 700 50px/72px "Noto Sans JP";
+                    color: #000000;
+                }
+                .category {
+                    position: relative;
+                    select {
+                        background: #ffffff;
+                        border: 1px solid #dedede;
+                        border-radius: 4px;
+                        @include wh(144px, 0);
+                        padding: 7px 20.42px 10px 15px;
+                        appearance: none;
+                        font: normal 500 15px/22px "Noto Sans JP";
+                        color: #212121;
+                    }
+                    .arrow {
+                        position: absolute;
+                        top: 10px;
+                        right: 16.33px;
+                        img {
+                            @include wh(7.67px, 7.64px);
+                        }
+                    }
+                }
+            }
+            .body {
+                margin-bottom: 50px;
+                .row {
+                    gap: 70px 30px;
+                    .card {
+                        @include wh(calc(100% / 3 - 20px), 0);
+                        border-radius: 8px;
+                        overflow: hidden;
+                        background: #ffffff;
+                        border: 1px solid #cccccc;
+                        a {
+                            text-decoration: none;
+                            .card-img {
+                                @include wh(100%, auto);
+                                overflow: hidden;
+                                margin-bottom: 25px;
+                                transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                position: relative;
+
+                                @include effectImg();
+                                img {
+                                    @include wh(100%, 0);
+                                    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                }
+                            }
+                            .card-content {
+                                padding: 0 13px 31px 20px;
+                                .card-flex {
+                                    @include center;
+                                    justify-content: start;
+                                    margin-bottom: 15px;
+                                    flex-wrap: wrap;
+                                    .card-user {
+                                        font: normal 400 18px/30px "SVN-Gilroy";
+                                        color: #211e3b;
+                                        @include center;
+                                        margin-right: 24px;
+                                        margin-left: 7px;
+                                        svg {
+                                            margin-right: 10px;
+                                            path {
+                                                fill: #858383;
+                                            }
+                                        }
+                                    }
+                                    .card-time {
+                                        font: normal 400 18px/30px "SVN-Gilroy";
+                                        color: #211e3b;
+                                        @include center;
+                                        svg {
+                                            margin-right: 10px;
+                                            path {
+                                                fill: #858383;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .card-title {
+                                font: normal 700 20px/28px "SVN-Gilroy";
+                                color: #211e3b;
+                                margin-bottom: 10px;
+                                @include cutText();
+                            }
+                            .card-text {
+                                font: normal 400 18px/25px "SVN-Gilroy";
+                                color: #211e3b;
+                                margin-bottom: 19px;
+                                @include cutText();
+                            }
+                            .card-button {
+                                @include wh(137px, 40px);
+                                background: #ffffff;
+                                border: 1px solid #e4e4e4;
+                                border-radius: 4px;
+                                font: normal 400 14px/20px "SVN-Gilroy";
+                                color: #c40000;
+                                cursor: pointer;
+                                &:hover {
+                                    transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+                                    box-shadow: inset 300px 0 0 0 #c40000;
+                                    color: #ffffff;
+                                }
+
+                                img {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .pagination {
+                @include center;
+                margin-bottom: 96px;
+                ul {
+                    @include center;
+                    list-style: none;
+                    li {
+                        @include center;
+                        margin-right: 10px;
+                        @include wh(32px, 32px);
+                        &:hover {
+                            @include wh(32px, 32px);
+                            background: #ffe4e4;
+                            border-radius: 100%;
+                            a {
+                                color: #c40000;
+                            }
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &.first {
+                            @include wh(40px, 40px);
+                            border-radius: 100%;
+                            background: #c40000;
+                            a {
+                                color: #ffffff;
+                                @include center;
+                            }
+                        }
+                        &.end {
+                            @include wh(40px, 40px);
+                            border-radius: 100%;
+                            background: #e5e5e5;
+                            transform: rotate(180deg);
+                            a {
+                                color: #ffffff;
+                                @include center;
+                            }
+                        }
+                        &.active {
+                            @include wh(32px, 32px);
+                            background: #ffe4e4;
+                            border-radius: 100%;
+                            a {
+                                color: #c40000;
+                            }
+                        }
+                        a {
+                            text-decoration: none;
+                            font: normal 700 20px/28px "SVN-Gilroy";
+                            color: #211e3b;
+                            text-align: center;
+                            @include wh(100%, 100%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    @include center;
+    font: normal normal 500 15px/22px "Noto Sans JP";
+    color: #ffffff;
+    @include wh(0, 94px);
+    background: #000000;
+}
+.background_mobile_menu {
+    display: block;
+    background-color: #c2bcbc;
+    opacity: 0.5;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+@import "./responsive.scss";
