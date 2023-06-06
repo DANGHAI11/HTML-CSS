@@ -127,19 +127,18 @@
                     .header-left {
                         transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
                         position: fixed;
+                        display: flex;
                         flex-direction: column;
                         justify-content: start;
                         text-align: start;
                         align-items: start;
                         @include wh(250px, 100vh);
                         z-index: 1000;
-                        top: -300px;
-                        left: 0;
+                        top: 0;
+                        left: -300px;
                         background: #ffffff;
                         padding: 15px;
-                        display: none;
                         &.active {
-                            display: flex;
                             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
                         }
                         .logo-mobile {
@@ -168,7 +167,7 @@
                             }
                         }
                         .menu-close {
-                            display: block;
+                            display: none;
                             position: fixed;
                             left: 220px;
                             @include wh(23px, 20px);
