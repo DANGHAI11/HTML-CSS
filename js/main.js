@@ -19,15 +19,17 @@ function removeMenuMobile() {
 
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector("header .nav").style.top = "0";
-    search[0].classList.remove("active");
-  } else {
+  if (prevScrollpos < currentScrollPos) {
     document.querySelector("header .nav").style.top = "-200px";
+    search[0].classList.remove("active");
+  }
+  else{
+    document.querySelector("header .nav").style.top = "0";
     search[0].classList.remove("active");
   }
   prevScrollpos = currentScrollPos;
 };
+
 
 function backToTop() {
   document.body.scrollTop = 0;

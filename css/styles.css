@@ -51,6 +51,8 @@ body {
 
 .row {
   display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -84,11 +86,11 @@ header .nav {
   box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
   padding: 30px 0 31px 0;
   z-index: 99;
-  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-  -moz-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-  -ms-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-  -o-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+  -webkit-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+  -moz-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+  -ms-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+  -o-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
 }
 header .nav .container .row {
   justify-content: space-between;
@@ -100,7 +102,10 @@ header .nav .container .row .mobile {
 }
 header .nav .container .row .header-right {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
 }
@@ -159,7 +164,10 @@ header .nav .container .row .header-right .form-search form button svg path {
 header .nav .container .row .header-left {
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
 }
@@ -185,14 +193,20 @@ header .nav .container .row .header-left a {
 }
 header .nav .container .row .header-left .login {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-left: 106px;
 }
 header .nav .container .row .header-left .login a {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   text-decoration: none;
@@ -221,7 +235,10 @@ main {
 }
 main .wrap .container .title-category {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   justify-content: space-between;
@@ -248,7 +265,7 @@ main .wrap .container .title-category .category select {
 }
 main .wrap .container .title-category .category .arrow {
   position: absolute;
-  top: 16px;
+  top: 12px;
   right: 20.42px;
 }
 main .wrap .container .title-category .category .arrow img {
@@ -317,7 +334,10 @@ main .wrap .container .body .row .card a .card-content {
 }
 main .wrap .container .body .row .card a .card-content .card-flex {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   justify-content: start;
@@ -328,7 +348,10 @@ main .wrap .container .body .row .card a .card-content .card-flex .card-user {
   font: normal 400 18px/30px "SVN-Gilroy";
   color: #211e3b;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-right: 21px;
@@ -340,7 +363,10 @@ main .wrap .container .body .row .card a .card-content .card-flex .card-time {
   font: normal 400 18px/30px "SVN-Gilroy";
   color: #211e3b;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
 }
@@ -378,7 +404,7 @@ main .wrap .container .body .row .card a .card-button {
   cursor: pointer;
 }
 main .wrap .container .body .row .card a .card-button:hover {
-  transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   box-shadow: inset 300px 0 0 0 #c40000;
   color: #ffffff;
 }
@@ -393,21 +419,30 @@ main .wrap .container .body .row .card a .card-button svg {
 }
 main .wrap .container .pagination {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-bottom: 96px;
 }
 main .wrap .container .pagination ul {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   list-style: none;
 }
 main .wrap .container .pagination ul li {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-right: 10px;
@@ -435,7 +470,10 @@ main .wrap .container .pagination ul li.first {
 main .wrap .container .pagination ul li.first a {
   color: #ffffff;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-top: 0px;
@@ -449,7 +487,10 @@ main .wrap .container .pagination ul li.end {
 main .wrap .container .pagination ul li.end a {
   color: #ffffff;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   margin-top: 0px;
@@ -470,7 +511,10 @@ main .wrap .container .pagination ul li a {
   text-align: center;
   border-radius: 50%;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   width: 100%;
@@ -480,12 +524,19 @@ main .wrap .container .pagination ul li a {
 
 footer {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   align-content: center;
   color: #ffffff;
   height: 94px;
   background: #000000;
+}
+footer div p {
+  font: normal 500 15px/22px "Noto Sans JP";
+  color: #ffffff;
 }
 
 @media screen and (max-width: 1200px) {
@@ -542,7 +593,10 @@ footer {
     width: 100%;
     height: 69px;
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     align-content: center;
     justify-content: space-between;
@@ -610,14 +664,20 @@ footer {
     width: 80%;
     height: 40px;
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     align-content: center;
   }
   header .nav .container .row .header-left .logo-mobile {
     margin: 15px 0 30px 0 !important;
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     align-content: center;
     width: 100%;

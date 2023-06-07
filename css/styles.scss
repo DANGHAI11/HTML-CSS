@@ -17,6 +17,8 @@ body {
 }
 .row {
     display: flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 .container {
@@ -47,11 +49,11 @@ header {
         box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
         padding: 30px 0 31px 0;
         z-index: 99;
-        transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-        -webkit-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-        -moz-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-        -ms-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-        -o-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+        -webkit-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+        -moz-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+        -ms-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
+        -o-transition: all 2s cubic-bezier(0.46, 0.15, 0.56, 0.89);
         .container {
             .row {
                 .mobile {
@@ -194,9 +196,8 @@ main {
                     }
                     .arrow {
                         position: absolute;
-                        top: 16px;
+                        top: 12px;
                         right: 20.42px;
-                        // @include wh(7.67px, 7.64px);
                         img {
                             vertical-align: inherit;
                             width: 100%;
@@ -284,7 +285,7 @@ main {
                                 color: #c40000;
                                 cursor: pointer;
                                 &:hover {
-                                    transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+                                    transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
                                     box-shadow: inset 300px 0 0 0 #c40000;
                                     color: #ffffff;
                                     svg {
@@ -372,6 +373,12 @@ footer {
     color: #ffffff;
     @include wh(0, 94px);
     background: #000000;
+    div {
+        p {
+            font: normal 500 15px/22px "Noto Sans JP";
+            color: #ffffff;
+        }
+    }
 }
 
 @import "./responsive.scss";
