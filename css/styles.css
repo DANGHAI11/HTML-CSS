@@ -418,7 +418,7 @@ main .wrap .container .pagination ul li:hover {
   width: 32px;
   height: 32px;
   background: #ffe4e4;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 main .wrap .container .pagination ul li:hover a {
   color: #c40000;

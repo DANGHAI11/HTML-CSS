@@ -315,7 +315,7 @@ main {
                         &:hover {
                             @include wh(32px, 32px);
                             background: #ffe4e4;
-                            border-radius: 100%;
+                            border-radius: 50%;
                             a {
                                 color: #c40000;
                             }
