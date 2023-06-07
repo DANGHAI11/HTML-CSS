@@ -330,6 +330,7 @@ main {
                             a {
                                 color: #ffffff;
                                 @include center;
+                                margin-top: 0px;
                             }
                         }
                         &.end {
@@ -339,6 +340,7 @@ main {
                             a {
                                 color: #ffffff;
                                 @include center;
+                                margin-top: 0px;
                             }
                         }
                         &.active {

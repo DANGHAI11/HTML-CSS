@@ -1,9 +1,9 @@
 let menu = document.getElementsByClassName("header-left");
 let background = document.getElementsByClassName("background-mobile");
 var prevScrollpos = window.pageYOffset;
+let search = document.getElementsByClassName("header-right");
 
 function searchMobile() {
-  let search = document.getElementsByClassName("header-right");
   search[0].classList.toggle("active");
 }
 
@@ -21,8 +21,10 @@ window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.querySelector("header .nav").style.top = "0";
+    search[0].classList.remove("active");
   } else {
     document.querySelector("header .nav").style.top = "-200px";
+    search[0].classList.remove("active");
   }
   prevScrollpos = currentScrollPos;
 };

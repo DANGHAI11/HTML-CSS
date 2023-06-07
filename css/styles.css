@@ -438,6 +438,7 @@ main .wrap .container .pagination ul li.first a {
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-top: 0px;
 }
 main .wrap .container .pagination ul li.end {
   width: 40px;
@@ -451,6 +452,7 @@ main .wrap .container .pagination ul li.end a {
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-top: 0px;
 }
 main .wrap .container .pagination ul li.active {
   width: 32px;
