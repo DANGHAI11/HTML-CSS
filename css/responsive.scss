@@ -1,10 +1,5 @@
 @media screen and (max-width: 1200px) {
     header {
-        .background-image {
-            img {
-                @include wh(100%, 0);
-            }
-        }
         .nav {
             .container {
                 .row {
@@ -20,11 +15,6 @@
 }
 @media screen and (max-width: 1000px) {
     header {
-        .background-image {
-            img {
-                @include wh(100%, 0);
-            }
-        }
         .nav {
             .container {
                 .row {
@@ -73,17 +63,18 @@
         padding: 0 68px 0 64px;
     }
     header {
+        overflow: hidden;
         .background-image {
             @include wh(100%, 454.49px);
             img {
-                @include wh(100%, 100%);
+                @include wh( 167%, 100%);
+                -o-object-fit: cover;
                 object-fit: cover;
             }
         }
         .nav {
-            background: #ffffff;
-            box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
             padding: 0;
+            background: #ffffff;
             .container {
                 padding: 0 23px 0 22px;
                 .row {
@@ -130,16 +121,27 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: start;
-                        text-align: start;
-                        align-items: start;
+                        text-align: center;
+                        align-items: center;
                         @include wh(250px, 100vh);
                         z-index: 1000;
                         top: 0;
                         left: -300px;
                         background: #ffffff;
-                        padding: 15px;
+                        padding: 30px 20px;
+                        z-index: 100;
                         &.active {
-                            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+                            width: 300px;
+                            height: 300px;
+                            top: calc(50% - (300px / 2));
+                            left: calc(50% - (300px / 2));
+                            box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.25);
+                            > * {
+                                margin-bottom: 20px;
+                                width: 80%;
+                                height: 40px;
+                                @include center();
+                            }
                         }
                         .logo-mobile {
                             margin: 15px 0 30px 0 !important;
@@ -185,6 +187,15 @@
                             }
                         }
                     }
+                    .background-mobile {
+                        position: fixed;
+                        width: 100%;
+                        height: 100vh;
+                        top: 0;
+                        left: 0;
+                        background: #b0b0b07d;
+                        z-index: 90;
+                    }
                 }
             }
         }
@@ -203,47 +214,39 @@
                         position: relative;
                         .arrow {
                             position: absolute;
-                            top: 10px;
-                            right: 16.33px;
-                            img {
-                                @include wh(7.67px, 7.67px);
-                            }
                         }
                     }
                 }
                 .body {
                     margin-bottom: 67px;
                     .row {
-                        gap: 70px 0;
+                        gap: 50px 0;
                         .card {
-                            width: 100%;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            background: #ffffff;
-                            border: 1px solid #cccccc;
+                            @include wh(100%, 0);
+
                             a {
-                                text-decoration: none;
                                 .card-content {
                                     .card-flex {
                                         .card-user {
-                                            margin: 0 21px 0 0;
+                                            margin-right: 15px;
+                                            font-size: 16px;
                                             svg {
-                                                margin-right: 10px;
-                                                path {
-                                                    fill: #858383;
-                                                }
+                                                margin-right: 5px;
+                                                width: 20px;
+                                                height: 20px;
                                             }
                                         }
                                         .card-time {
+                                            font-size: 16px;
                                             svg {
-                                                margin-right: 9.5px;
-                                                path {
-                                                    fill: #858383;
-                                                }
+                                                margin-right: 5px;
+                                                width: 20px;
+                                                height: 20px;
                                             }
                                         }
                                     }
                                 }
+                                text-decoration: none;
                                 .card-title {
                                     -webkit-line-clamp: 3;
                                 }
@@ -256,14 +259,43 @@
                 }
                 .pagination {
                     margin-bottom: 53px;
+                    ul {
+                        li {
+                            .first {
+                                width: 38px;
+                                height: 38px;
+                            }
+                            .end {
+                                width: 38px;
+                                height: 38px;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 450px) {
     .container {
         width: 100%;
         padding: 0 30px 0 30px;
+    }
+
+    main {
+        .wrap {
+            .container {
+                .pagination {
+                    ul {
+                        width: 100%;
+                        justify-content: space-between;
+                        li {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
