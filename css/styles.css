@@ -438,13 +438,6 @@ main .wrap .container .pagination ul {
   list-style: none;
 }
 main .wrap .container .pagination ul li {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  -webkit-justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  align-content: center;
   margin-right: 10px;
   width: 32px;
   height: 32px;
@@ -506,7 +499,7 @@ main .wrap .container .pagination ul li.active a {
 }
 main .wrap .container .pagination ul li a {
   text-decoration: none;
-  font: normal 700 20px/28px "SVN-Gilroy";
+  font: normal 700 20px/0px "SVN-Gilroy";
   color: #211e3b;
   text-align: center;
   border-radius: 50%;
@@ -523,7 +516,6 @@ main .wrap .container .pagination ul li a {
   align-content: center;
   width: 100%;
   height: 100%;
-  margin-top: -2px;
 }
 
 footer {

@@ -310,7 +310,6 @@ main {
                     @include center;
                     list-style: none;
                     li {
-                        @include center;
                         margin-right: 10px;
                         @include wh(32px, 32px);
                         &:hover {
@@ -354,7 +353,7 @@ main {
                         }
                         a {
                             text-decoration: none;
-                            font: normal 700 20px/28px "SVN-Gilroy";
+                            font: normal 700 20px/0px "SVN-Gilroy";
                             color: #211e3b;
                             text-align: center;
                             border-radius: 50%;
@@ -364,8 +363,7 @@ main {
                             -o-border-radius: 50%;
                             @include center();
                             @include wh(100%, 100%);
-                            margin-top: -2px;
-}
+                        }
                     }
                 }
             }
