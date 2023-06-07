@@ -429,7 +429,7 @@ main .wrap .container .pagination ul li:last-child {
 main .wrap .container .pagination ul li.first {
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 50%;
   background: #c40000;
 }
 main .wrap .container .pagination ul li.first a {
@@ -456,22 +456,24 @@ main .wrap .container .pagination ul li.active {
   width: 32px;
   height: 32px;
   background: #ffe4e4;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 main .wrap .container .pagination ul li.active a {
   color: #c40000;
 }
 main .wrap .container .pagination ul li a {
   text-decoration: none;
-  font: normal 700 20px/28px "SVN-Gilroy Bold";
+  font: normal 700 20px/28px "SVN-Gilroy";
   color: #211e3b;
   text-align: center;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   width: 100%;
   height: 100%;
+  margin-top: -3px;
 }
 
 footer {
