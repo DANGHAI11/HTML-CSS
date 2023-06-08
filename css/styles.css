@@ -439,12 +439,14 @@ main .wrap .container .pagination ul {
 }
 main .wrap .container .pagination ul li {
   margin-right: 10px;
+  width: 32px;
+  height: 32px;
 }
 main .wrap .container .pagination ul li:hover {
   width: 32px;
   height: 32px;
   background: #ffe4e4;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 main .wrap .container .pagination ul li:hover a {
   color: #c40000;
@@ -515,8 +517,8 @@ main .wrap .container .pagination ul li a {
   -webkit-align-items: center;
   align-items: center;
   align-content: center;
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -785,6 +787,9 @@ footer div p {
   main .wrap .container .pagination ul li .end {
     width: 38px;
     height: 38px;
+  }
+  main .wrap .container .pagination ul li a {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 450px) {

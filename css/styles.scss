@@ -311,10 +311,12 @@ main {
                     list-style: none;
                     li {
                         margin-right: 10px;
+                        width: 32px;
+                        height: 32px;
                         &:hover {
                             @include wh(32px, 32px);
                             background: #ffe4e4;
-                            border-radius: 50%;
+                            border-radius: 100%;
                             a {
                                 color: #c40000;
                             }
@@ -362,7 +364,7 @@ main {
                             -ms-border-radius: 100%;
                             -o-border-radius: 100%;
                             @include center();
-                            @include wh(32px, 32px);
+                            @include wh(100%, 100%);
                         }
                     }
                 }
