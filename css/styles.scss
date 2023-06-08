@@ -311,7 +311,6 @@ main {
                     list-style: none;
                     li {
                         margin-right: 10px;
-                        @include wh(32px, 32px);
                         &:hover {
                             @include wh(32px, 32px);
                             background: #ffe4e4;
@@ -331,6 +330,7 @@ main {
                                 color: #ffffff;
                                 @include center;
                                 margin-top: 0px;
+                                @include wh(100%, 100%);
                             }
                         }
                         &.end {
@@ -341,6 +341,7 @@ main {
                                 color: #ffffff;
                                 @include center;
                                 margin-top: 0px;
+                                @include wh(100%, 100%);
                             }
                         }
                         &.active {
@@ -353,15 +354,15 @@ main {
                         }
                         a {
                             text-decoration: none;
-                            font: normal 700 18px/0px "SVN-Gilroy";
+                            font: normal 700 18px/0 "SVN-Gilroy";
                             color: #211e3b;
-                            border-radius: 50%;
-                            -webkit-border-radius: 50%;
-                            -moz-border-radius: 50%;
-                            -ms-border-radius: 50%;
-                            -o-border-radius: 50%;
+                            border-radius: 100%;
+                            -webkit-border-radius: 100%;
+                            -moz-border-radius: 100%;
+                            -ms-border-radius: 100%;
+                            -o-border-radius: 100%;
                             @include center();
-                            @include wh(100%, 100%);
+                            @include wh(32px, 32px);
                         }
                     }
                 }

@@ -439,8 +439,6 @@ main .wrap .container .pagination ul {
 }
 main .wrap .container .pagination ul li {
   margin-right: 10px;
-  width: 32px;
-  height: 32px;
 }
 main .wrap .container .pagination ul li:hover {
   width: 32px;
@@ -470,6 +468,8 @@ main .wrap .container .pagination ul li.first a {
   align-items: center;
   align-content: center;
   margin-top: 0px;
+  width: 100%;
+  height: 100%;
 }
 main .wrap .container .pagination ul li.end {
   width: 40px;
@@ -487,6 +487,8 @@ main .wrap .container .pagination ul li.end a {
   align-items: center;
   align-content: center;
   margin-top: 0px;
+  width: 100%;
+  height: 100%;
 }
 main .wrap .container .pagination ul li.active {
   width: 32px;
@@ -499,13 +501,13 @@ main .wrap .container .pagination ul li.active a {
 }
 main .wrap .container .pagination ul li a {
   text-decoration: none;
-  font: normal 700 18px/0px "SVN-Gilroy";
+  font: normal 700 18px/0 "SVN-Gilroy";
   color: #211e3b;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
   display: flex;
   display: -webkit-flex;
   justify-content: center;
@@ -513,8 +515,8 @@ main .wrap .container .pagination ul li a {
   -webkit-align-items: center;
   align-items: center;
   align-content: center;
-  width: 100%;
-  height: 100%;
+  width: 32px;
+  height: 32px;
 }
 
 footer {

@@ -1,8 +1,7 @@
-let menu = document.getElementsByClassName("header-left");
-let background = document.getElementsByClassName("background-mobile");
-var prevScrollpos = window.pageYOffset;
-let search = document.getElementsByClassName("header-right");
-
+const menu = document.getElementsByClassName("header-left");
+const background = document.getElementsByClassName("background-mobile");
+const search = document.getElementsByClassName("header-right");
+let prevScrollpos = window.pageYOffset;
 function searchMobile() {
   search[0].classList.toggle("active");
 }
