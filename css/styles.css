@@ -404,7 +404,7 @@ main .wrap .container .body .row .card a .card-button {
   cursor: pointer;
 }
 main .wrap .container .body .row .card a .card-button:hover {
-  transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   box-shadow: inset 300px 0 0 0 #c40000;
   color: #ffffff;
 }
